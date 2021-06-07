@@ -1,10 +1,10 @@
 # require modules here
-require 'yaml'
-require 'pry'
+require "pry"
+require "yaml"
 
-def load_library(file)
-  emote_dict = YAML.load_file(file)
-  
+def load_library
+  emote_dict = YAML.load_file("emoticons.yml")
+  binding.pry
   emote_dict.each_with_object({}) do |(key, array), final|
     final[key] = {
       :english => array[0],
